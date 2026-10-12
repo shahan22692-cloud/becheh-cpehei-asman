@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بچه‌های آسمان | سفری به دنیای هنر اتیسم</title>
+<link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0a0612;
+  --deep:#150a20;
+  --royal:#2a1338;
+  --plum:#4a1e4d;
+  --magenta:#8b1f5c;
+  --rose:#c94f7c;
+  --coral:#f27a5e;
+  --amber:#ffb547;
+  --honey:#ffd97a;
+  --mint:#5eead4;
+  --teal:#14b8a6;
+  --ocean:#0e7490;
+  --gold:#d4af37;
+  --gold-light:#f5e6a8;
+  --cream:#fef3e2;
+  --shadow-deep:0 30px 80px -20px rgba(0,0,0,0.8);
+  --glow-gold:0 0 40px rgba(212,175,55,0.5);
+  --glow-rose:0 0 60px rgba(201,79,124,0.4);
+  --glow-mint:0 0 40px rgba(94,234,212,0.4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Vazir',sans-serif;
+  background:var(--night);
+  color:var(--cream);
+  overflow-x:hidden;
+  min-height:100vh;
+  position:relative;
+  line-height:1.7;
+}
+
+/* ============ پس‌زمینه زنده و متحرک ============ */
+.bg-layer{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* گرادیان شب ایرانی */
+.bg-gradient{
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(139,31,92,0.4) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 90%, rgba(14,116,144,0.4) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(74,30,77,0.5) 0%, transparent 60%),
+    linear-gradient(180deg, #0a0612 0%, #150a20 40%, #1f0d2a 70%, #0a0612 100%);
+  animation:bgShift 30s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift{
+  0%{transform:scale(1) rotate(0deg)}
+  50%{transform:scale(1.1) rotate(3deg)}
+  100%{transform:scale(1.05) rotate(-3deg)}
+}
+
+/* ذرات شناور طلایی */
+.particles{
+  position:absolute;
+  inset:0;
+}
+
+.particle{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:var(--gold-light);
+  border-radius:50%;
+  box-shadow:0 0 10px var(--gold), 0 0 20px var(--gold);
+  animation:floatUp linear infinite;
+  opacity:0;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(100vh) scale(0);opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateY(-100vh) scale(1.5);opacity:0}
+}
+
+/* شبکه بته جقه در پس‌زمینه */
+.boteh-grid{
+  position:absolute;
+  inset:0;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23d4af37" stop-opacity="0.15"/><stop offset="100%" stop-color="%23c94f7c" stop-opacity="0.15"/></linearGradient></defs><path d="M60 15 C40 15 30 35 35 55 C40 75 60 85 80 80 C95 75 100 55 90 40 C80 25 65 20 60 15Z" fill="none" stroke="url(%23bg)" stroke-width="1.5"/><path d="M60 30 C48 30 42 42 45 55 C48 68 60 73 72 70 C82 67 85 55 79 45 C73 36 66 33 60 30Z" fill="none" stroke="url(%23bg)" stroke-width="1"/><circle cx="60" cy="50" r="6" fill="none" stroke="url(%23bg)" stroke-width="1"/><circle cx="60" cy="50" r="2" fill="%23d4af37" fill-opacity="0.2"/></svg>');
+  background-size:180px 180px;
+  opacity:0.5;
+  animation:gridShift 60s linear infinite;
+}
+
+@keyframes gridShift{
+  0%{background-position:0 0}
+  100%{background-position:180px 180px}
+}
+
+/* نورهای نئون شناور */
+.neon-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.4;
+  animation:orbFloat 20s ease-in-out infinite;
+}
+
+.orb-1{width:400px;height:400px;background:var(--magenta);top:-100px;right:-100px;animation-delay:0s}
+.orb-2{width:500px;height:500px;background:var(--ocean);bottom:-150px;left:-150px;animation-delay:-7s}
+.orb-3{width:300px;height:300px;background:var(--amber);top:40%;left:30%;animation-delay:-14s;opacity:0.25}
+
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(80px,-60px) scale(1.15)}
+  66%{transform:translate(-60px,60px) scale(0.9)}
+}
+
+/* ============ هدر و لوگو ============ */
+header{
+  position:relative;
+  z-index:10;
+  padding:40px 20px 20px;
+  text-align:center;
+}
+
+.logo-wrap{
+  display:inline-block;
+  position:relative;
+  padding:20px 60px;
+  animation:logoFloat 6s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+.logo-emblem{
+  position:absolute;
+  inset:0;
+  border:2px solid var(--gold);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation:emblemSpin 20s linear infinite;
+  box-shadow:0 0 30px rgba(212,175,55,0.4), inset 0 0 30px rgba(212,175,55,0.2);
+}
+
+.logo-emblem::before{
+  content:'';
+  position:absolute;
+  inset:8px;
+  border:1px dashed rgba(212,175,55,0.6);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation:emblemSpin 15s linear infinite reverse;
+}
+
+@keyframes emblemSpin{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+h1.site-title{
+  font-family:'Lalezar',cursive;
+  font-size:clamp(2.5rem,7vw,6rem);
+  font-weight:400;
+  position:relative;
+  z-index:2;
+  background:linear-gradient(135deg,#f5e6a8 0%,#ffb547 25%,#c94f7c 50%,#8b1f5c 75%,#5eead4 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  letter-spacing:8px;
+  filter:drop-shadow(0 0 30px rgba(212,175,55,0.7)) drop-shadow(0 0 60px rgba(201,79,124,0.5));
+  animation:titleFlow 6s ease-in-out infinite;
+  line-height:1.2;
+  padding:10px 0;
+}
+
+@keyframes titleFlow{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+.site-subtitle{
+  font-family:'Amiri',serif;
+  font-size:clamp(1rem,2vw,1.4rem);
+  color:var(--honey);
+  margin-top:10px;
+  letter-spacing:4px;
+  opacity:0.9;
+  position:relative;
+  display:inline-block;
+  padding:0 30px;
+}
+
+.site-subtitle::before,
+.site-subtitle::after{
+  content:'✦';
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--gold);
+  animation:starPulse 2s ease-in-out infinite;
+  font-size:1.2rem;
+}
+
+.site-subtitle::before{right:0}
+.site-subtitle::after{left:0}
+
+@keyframes starPulse{
+  0%,100%{opacity:0.4;transform:translateY(-50%) scale(1)}
+  50%{opacity:1;transform:translateY(-50%) scale(1.3)}
+}
+
+/* ============ نوار سبد خرید ============ */
+.cart-bar{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 24px;
+  background:linear-gradient(135deg,rgba(21,10,32,0.85),rgba(74,30,77,0.85));
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1.5px solid var(--gold);
+  border-radius:60px;
+  cursor:pointer;
+  transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.3);
+  font-family:'Lalezar',cursive;
+  color:var(--honey);
+  font-size:1.1rem;
+  letter-spacing:2px;
+}
+
+.cart-bar:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 15px 50px rgba(0,0,0,0.6), 0 0 50px rgba(212,175,55,0.6);
+  border-color:var(--honey);
+}
+
+.cart-icon{
+  font-size:1.4rem;
+  animation:cartShake 3s ease-in-out infinite;
+}
+
+@keyframes cartShake{
+  0%,90%,100%{transform:rotate(0deg)}
+  93%{transform:rotate(-15deg)}
+  96%{transform:rotate(15deg)}
+}
+
+.cart-badge{
+  background:linear-gradient(135deg,var(--rose),var(--magenta));
+  color:white;
+  min-width:28px;
+  height:28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.9rem;
+  border:2px solid var(--honey);
+  box-shadow:0 0 15px rgba(201,79,124,0.8);
+  font-family:'Vazir',sans-serif;
+  font-weight:bold;
+}
+
+/* ============ ناوبری اصلی ============ */
+.main-nav{
+  position:relative;
+  z-index:10;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  padding:40px 20px 60px;
+}
+
+.nav-btn{
+  position:relative;
+  padding:20px 45px;
+  background:linear-gradient(135deg,rgba(74,30,77,0.6),rgba(21,10,32,0.8));
+  backdrop-filter:blur(10px);
+  border:2px solid transparent;
+  background-clip:padding-box;
+  border-radius:80px;
+  color:var(--cream);
+  font-family:'Lalezar',cursive;
+  font-size:1.4rem;
+  letter-spacing:3px;
+  cursor:pointer;
+  transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.nav-btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:2px;
+  border-radius:80px;
+  background:linear-gradient(135deg,var(--gold),var(--rose),var(--mint),var(--gold));
+  background-size:300% 300%;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:borderFlow 4s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes borderFlow{
+  0%{background-position:0% 50%}
+  100%{background-position:300% 50%}
+}
+
+.nav-btn::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,181,71,0.3) 0%, transparent 50%);
+  opacity:0;
+  transition:opacity 0.4s;
+  pointer-events:none;
+}
+
+.nav-btn:hover::after{
+  opacity:1;
+}
+
+.nav-btn:hover{
+  transform:translateY(-5px);
+  color:var(--honey);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5), 0 0 50px rgba(212,175,55,0.5);
+  letter-spacing:5px;
+}
+
+.nav-btn.active{
+  background:linear-gradient(135deg,rgba(201,79,124,0.4),rgba(139,31,92,0.5));
+  color:var(--honey);
+  box-shadow:0 0 40px rgba(201,79,124,0.7), inset 0 0 30px rgba(255,181,71,0.2);
+}
+
+.nav-btn.active::before{
+  opacity:1;
+}
+
+/* ============ بخش‌ها ============ */
+.section{
+  display:none;
+  position:relative;
+  z-index:5;
+  padding:20px;
+  animation:sectionIn 1s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+.section.active{display:block}
+
+@keyframes sectionIn{
+  from{opacity:0;transform:translateY(60px) scale(0.95);filter:blur(10px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+
+.section-title{
+  text-align:center;
+  font-family:'Lalezar',cursive;
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:var(--honey);
+  letter-spacing:5px;
+  margin-bottom:60px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  filter:drop-shadow(0 0 20px rgba(255,181,71,0.5));
+}
+
+.section-title::before,
+.section-title::after{
+  content:'';
+  height:2px;
+  width:min(150px,20vw);
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  position:relative;
+}
+
+.section-title::before::after,
+.section-title::after::after{
+  content:'◆';
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--gold);
+  font-size:0.8rem;
+}
+
+/* ============ کارت محصول - طرح الماس ============ */
+.products-mosaic{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:70px 40px;
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 20px 100px;
+}
+
+.product-tile{
+  position:relative;
+  opacity:0;
+  transform:translateY(100px) rotateX(-20deg);
+  animation:tileReveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+  perspective:1500px;
+}
+
+.product-tile:nth-child(1){animation-delay:0.15s}
+.product-tile:nth-child(2){animation-delay:0.3s}
+.product-tile:nth-child(3){animation-delay:0.45s}
+.product-tile:nth-child(4){animation-delay:0.6s}
+.product-tile:nth-child(5){animation-delay:0.75s}
+.product-tile:nth-child(6){animation-delay:0.9s}
+
+@keyframes tileReveal{
+  to{opacity:1;transform:translateY(0) rotateX(0deg)}
+}
+
+/* هاله نورانی زیر کارت */
+.tile-aura{
+  position:absolute;
+  inset:-20px;
+  background:radial-gradient(ellipse at center, rgba(201,79,124,0.4) 0%, transparent 70%);
+  border-radius:50%;
+  filter:blur(30px);
+  opacity:0;
+  transition:opacity 0.6s;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.product-tile:hover .tile-aura{
+  opacity:1;
+}
+
+/* قاب اصلی کارت - شکل خاص شش ضلعی با گوشه‌های بریده */
+.tile-frame{
+  position:relative;
+  background:linear-gradient(165deg, #1a0d28 0%, #2a1338 50%, #150a20 100%);
+  border-radius:4px;
+  padding:3px;
+  transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(212,175,55,0.3),
+    inset 0 0 60px rgba(139,31,92,0.2);
+  clip-path:polygon(
+    20px 0, calc(100% - 20px) 0, 100% 20px,
+    100% calc(100% - 20px), calc(100% - 20px) 100%,
+    20px 100%, 0 calc(100% - 20px), 0 20px
+  );
+}
+
+.product-tile:hover .tile-frame{
+  transform:translateY(-8px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,181,71,0.6),
+    0 0 60px rgba(201,79,124,0.5),
+    inset 0 0 80px rgba(212,175,55,0.15);
+}
+
+/* نوار طلایی روی قاب */
+.tile-frame::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:1px;
+  background:linear-gradient(135deg,var(--gold) 0%,transparent 30%,transparent 70%,var(--gold) 100%);
+  clip-path:polygon(
+    20px 0, calc(100% - 20px) 0, 100% 20px,
+    100% calc(100% - 20px), calc(100% - 20px) 100%,
+    20px 100%, 0 calc(100% - 20px), 0 20px
+  );
+  pointer-events:none;
+  opacity:0.6;
+  animation:goldShimmer 4s ease-in-out infinite;
+}
+
+@keyframes goldShimmer{
+  0%,100%{opacity:0.4}
+  50%{opacity:1}
+}
+
+.tile-inner{
+  background:linear-gradient(165deg, #150a20 0%, #1f0d2a 100%);
+  clip-path:polygon(
+    18px 0, calc(100% - 18px) 0, 100% 18px,
+    100% calc(100% - 18px), calc(100% - 18px) 100%,
+    18px 100%, 0 calc(100% - 18px), 0 18px
+  );
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* تصویر محصول با افکت شناور */
+.tile-image{
+  position:relative;
+  width:100%;
+  height:240px;
+  background:radial-gradient(circle at 50% 50%, rgba(139,31,92,0.4) 0%, rgba(21,10,32,1) 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:7rem;
+  overflow:hidden;
+  border-bottom:1px solid rgba(212,175,55,0.3);
+}
+
+.tile-image::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,181,71,0.15) 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(94,234,212,0.15) 0%, transparent 30%);
+  opacity:0.6;
+}
+
+.tile-image::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--rose),var(--gold),transparent);
+  background-size:200% 100%;
+  animation:lineFlow 3s linear infinite;
+}
+
+@keyframes lineFlow{
+  0%{background-position:0% 0}
+  100%{background-position:200% 0}
+}
+
+.tile-emoji{
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 10px 30px rgba(212,175,55,0.6));
+  transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  animation:emojiIdle 4s ease-in-out infinite;
+}
+
+@keyframes emojiIdle{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-12px) rotate(3deg)}
+}
+
+.product-tile:hover .tile-emoji{
+  transform:scale(1.2) rotate(8deg);
+  filter:drop-shadow(0 15px 40px rgba(255,181,71,0.9));
+}
+
+.tile-content{
+  padding:28px 24px 24px;
+  position:relative;
+}
+
+.tile-category{
+  display:inline-block;
+  font-size:0.7rem;
+  letter-spacing:3px;
+  color:var(--mint);
+  border:1px solid var(--mint);
+  padding:3px 12px;
+  border-radius:20px;
+  margin-bottom:12px;
+  opacity:0.85;
+}
+
+.tile-title{
+  font-family:'Lalezar',cursive;
+  font-size:1.8rem;
+  color:var(--cream);
+  margin-bottom:10px;
+  letter-spacing:2px;
+  text-shadow:0 0 20px rgba(255,181,71,0.3);
+  transition:all 0.4s;
+}
+
+.product-tile:hover .tile-title{
+  color:var(--honey);
+  text-shadow:0 0 30px rgba(255,181,71,0.8);
+}
+
+.tile-price{
+  font-size:1.2rem;
+  color:var(--honey);
+  font-weight:bold;
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.tile-price::before{
+  content:'◆';
+  color:var(--gold);
+  font-size:0.7rem;
+}
+
+/* دکمه باز کردن - الماس چرخان */
+.reveal-btn{
+  position:relative;
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,rgba(139,31,92,0.3),rgba(21,10,32,0.5));
+  border:1.5px solid var(--gold);
+  color:var(--honey);
+  font-family:'Lalezar',cursive;
+  font-size:1.15rem;
+  letter-spacing:4px;
+  cursor:pointer;
+  border-radius:4px;
+  overflow:hidden;
+  transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.reveal-btn::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:radial-gradient(circle,rgba(255,181,71,0.6),transparent 70%);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.6s, height 0.6s;
+}
+
+.reveal-btn:hover::before{
+  width:400px;
+  height:400px;
+}
+
+.reveal-btn:hover{
+  color:var(--night);
+  background:linear-gradient(135deg,var(--gold),var(--honey));
+  letter-spacing:6px;
+  box-shadow:0 0 40px rgba(255,181,71,0.8);
+}
+
+.reveal-btn .diamond{
+  display:inline-block;
+  animation:diamondSpin 3s linear infinite;
+  font-size:0.9rem;
+}
+
+@keyframes diamondSpin{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+/* ============ پنل توضیحات (کشویی از داخل کارت) ============ */
+.details-panel{
+  position:relative;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 1s cubic-bezier(0.16,1,0.3,1),
+             margin 0.6s cubic-bezier(0.16,1,0.3,1);
+  margin-top:0;
+}
+
+.details-panel.open{
+  max-height:600px;
+  margin-top:20px;
+}
+
+.details-inner{
+  background:linear-gradient(165deg, rgba(42,19,56,0.95), rgba(21,10,32,0.98));
+  border:1.5px solid var(--gold);
+  border-radius:4px;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:inset 0 0 60px rgba(139,31,92,0.3);
+  transform:translateY(-20px);
+  opacity:0;
+  transition:all 0.6s 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.details-panel.open .details-inner{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.details-inner::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--rose),var(--mint),var(--gold),transparent);
+  background-size:300% 100%;
+  animation:lineFlow 4s linear infinite;
+}
+
+/* اطلاعات سازنده */
+.creator-block{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:14px;
+  background:linear-gradient(135deg,rgba(139,31,92,0.2),rgba(21,10,32,0.5));
+  border-radius:60px;
+  border:1px solid rgba(212,175,55,0.4);
+  margin-bottom:16px;
+  position:relative;
+  overflow:hidden;
+}
+
+.creator-block::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,181,71,0.1),transparent);
+  transform:translateX(-100%);
+  animation:shineSlide 3s ease-in-out infinite;
+}
+
+@keyframes shineSlide{
+  0%,100%{transform:translateX(-100%)}
+  50%{transform:translateX(100%)}
+}
+
+.creator-avatar{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--honey),var(--rose),var(--magenta));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.8rem;
+  border:2px solid var(--honey);
+  box-shadow:0 0 25px rgba(255,181,71,0.6);
+  flex-shrink:0;
+  animation:avatarPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes avatarPulse{
+  0%,100%{box-shadow:0 0 25px rgba(255,181,71,0.6)}
+  50%{box-shadow:0 0 40px rgba(255,181,71,0.9)}
+}
+
+.creator-info{
+  flex:1;
+}
+
+.creator-name{
+  font-family:'Lalezar',cursive;
+  font-size:1.3rem;
+  color:var(--honey);
+  letter-spacing:1px;
+}
+
+.creator-tag{
+  font-size:0.75rem;
+  color:var(--mint);
+  letter-spacing:2px;
+  opacity:0.9;
+}
+
+/* متن کاربرد */
+.usage-block{
+  padding:16px 18px;
+  background:linear-gradient(135deg,rgba(14,116,144,0.15),rgba(21,10,32,0.3));
+  border-right:3px solid var(--mint);
+  border-radius:8px;
+  margin-bottom:16px;
+  font-size:0.9rem;
+  line-height:1.9;
+  color:var(--cream);
+  position:relative;
+}
+
+.usage-block::before{
+  content:'✦ کاربرد';
+  position:absolute;
+  top:-10px;
+  right:12px;
+  background:var(--night);
+  padding:0 8px;
+  color:var(--mint);
+  font-size:0.7rem;
+  letter-spacing:2px;
+}
+
+/* دکمه افزودن به سبد خرید */
+.add-btn{
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,var(--magenta),var(--plum));
+  border:2px solid var(--gold);
+  color:var(--cream);
+  font-family:'Lalezar',cursive;
+  font-size:1.2rem;
+  letter-spacing:3px;
+  cursor:pointer;
+  border-radius:4px;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.add-btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,181,71,0.4),transparent);
+  transition:left 0.6s;
+}
+
+.add-btn:hover::before{
+  left:100%;
+}
+
+.add-btn:hover{
+  transform:scale(1.02);
+  background:linear-gradient(135deg,var(--rose),var(--magenta));
+  box-shadow:0 0 50px rgba(201,79,124,0.8);
+  border-color:var(--honey);
+}
+
+.add-btn.added{
+  background:linear-gradient(135deg,var(--teal),var(--ocean));
+}
+
+/* ============ بخش معلمان ============ */
+.teachers-mosaic{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:70px 40px;
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 20px 100px;
+}
+
+.teacher-tile{
+  position:relative;
+  opacity:0;
+  transform:translateY(100px) rotateY(-30deg);
+  animation:tileReveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+  perspective:1500px;
+}
+
+.teacher-tile:nth-child(1){animation-delay:0.2s}
+.teacher-tile:nth-child(2){animation-delay:0.4s}
+.teacher-tile:nth-child(3){animation-delay:0.6s}
+
+.teacher-frame{
+  position:relative;
+  background:linear-gradient(165deg, #1a0d28 0%, #142c3a 50%, #150a20 100%);
+  border-radius:4px;
+  padding:3px;
+  transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(94,234,212,0.3),
+    inset 0 0 60px rgba(14,116,144,0.3);
+  clip-path:polygon(
+    20px 0, calc(100% - 20px) 0, 100% 20px,
+    100% calc(100% - 20px), calc(100% - 20px) 100%,
+    20px 100%, 0 calc(100% - 20px), 0 20px
+  );
+}
+
+.teacher-tile:hover .teacher-frame{
+  transform:translateY(-8px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(94,234,212,0.8),
+    0 0 60px rgba(94,234,212,0.6),
+    inset 0 0 80px rgba(94,234,212,0.2);
+}
+
+.teacher-frame::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:1px;
+  background:linear-gradient(135deg,var(--mint) 0%,transparent 30%,transparent 70%,var(--mint) 100%);
+  clip-path:polygon(
+    20px 0, calc(100% - 20px) 0, 100% 20px,
+    100% calc(100% - 20px), calc(100% - 20px) 100%,
+    20px 100%, 0 calc(100% - 20px), 0 20px
+  );
+  pointer-events:none;
+  opacity:0.6;
+  animation:goldShimmer 4s ease-in-out infinite;
+}
+
+.teacher-inner{
+  background:linear-gradient(165deg, #0f1f28 0%, #150a20 100%);
+  clip-path:polygon(
+    18px 0, calc(100% - 18px) 0, 100% 18px,
+    100% calc(100% - 18px), calc(100% - 18px) 100%,
+    18px 100%, 0 calc(100% - 18px), 0 18px
+  );
+  overflow:hidden;
+}
+
+.teacher-head{
+  padding:36px 24px 24px;
+  text-align:center;
+  position:relative;
+  background:radial-gradient(circle at 50% 30%, rgba(94,234,212,0.15) 0%, transparent 60%);
+}
+
+.teacher-avatar-big{
+  width:120px;
+  height:120px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%, var(--honey), var(--rose), var(--magenta));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:4.5rem;
+  border:3px solid var(--mint);
+  box-shadow:0 0 40px rgba(94,234,212,0.6), inset 0 0 30px rgba(0,0,0,0.4);
+  position:relative;
+  animation:avatarFloat 4s ease-in-out infinite;
+}
+
+@keyframes avatarFloat{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-8px) rotate(3deg)}
+}
+
+.teacher-avatar-big::after{
+  content:'';
+  position:absolute;
+  inset:-8px;
+  border:1px dashed var(--mint);
+  border-radius:50%;
+  animation:emblemSpin 12s linear infinite;
+  opacity:0.5;
+}
+
+.teacher-name-big{
+  font-family:'Lalezar',cursive;
+  font-size:2rem;
+  color:var(--honey);
+  letter-spacing:2px;
+  margin-bottom:6px;
+  text-shadow:0 0 25px rgba(255,181,71,0.5);
+}
+
+.teacher-role-big{
+  display:inline-block;
+  padding:5px 18px;
+  background:linear-gradient(135deg,rgba(94,234,212,0.2),rgba(14,116,144,0.3));
+  border:1px solid var(--mint);
+  border-radius:30px;
+  color:var(--mint);
+  font-size:0.85rem;
+  letter-spacing:2px;
+}
+
+/* پنل معلم - باز شدن */
+.teacher-details{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 1s cubic-bezier(0.16,1,0.3,1);
+}
+
+.teacher-details.open{
+  max-height:600px;
+}
+
+.teacher-details-inner{
+  padding:0 24px 24px;
+  opacity:0;
+  transform:translateY(-20px);
+  transition:all 0.6s 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.teacher-details.open .teacher-details-inner{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.teacher-bio-big{
+  padding:18px;
+  background:linear-gradient(135deg,rgba(94,234,212,0.1),rgba(21,10,32,0.4));
+  border-right:3px solid var(--mint);
+  border-radius:8px;
+  font-size:0.9rem;
+  line-height:1.9;
+  margin-bottom:18px;
+  color:var(--cream);
+  position:relative;
+}
+
+.teacher-bio-big::before{
+  content:'✦ سابقه';
+  position:absolute;
+  top:-10px;
+  right:12px;
+  background:var(--night);
+  padding:0 8px;
+  color:var(--mint);
+  font-size:0.7rem;
+  letter-spacing:2px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.contact-chip{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:12px 10px;
+  background:linear-gradient(135deg,rgba(42,19,56,0.6),rgba(21,10,32,0.8));
+  border:1.5px solid rgba(212,175,55,0.5);
+  border-radius:30px;
+  color:var(--cream);
+  font-size:0.82rem;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative;
+  overflow:hidden;
+}
+
+.contact-chip::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--mint),var(--teal));
+  opacity:0;
+  transition:opacity 0.4s;
+  z-index:-1;
+}
+
+.contact-chip:hover{
+  color:var(--night);
+  border-color:var(--mint);
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 25px rgba(94,234,212,0.5);
+}
+
+.contact-chip:hover::before{
+  opacity:1;
+}
+
+/* ============ بخش درباره ============ */
+.about-cosmic{
+  max-width:1000px;
+  margin:0 auto 100px;
+  padding:60px 40px;
+  position:relative;
+  background:linear-gradient(165deg, rgba(42,19,56,0.7), rgba(21,10,32,0.9));
+  backdrop-filter:blur(20px);
+  border-radius:4px;
+  clip-path:polygon(
+    40px 0, calc(100% - 40px) 0, 100% 40px,
+    100% calc(100% - 40px), calc(100% - 40px) 100%,
+    40px 100%, 0 calc(100% - 40px), 0 40px
+  );
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(212,175,55,0.4),
+    inset 0 0 100px rgba(139,31,92,0.2);
+}
+
+.about-cosmic::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:2px;
+  background:linear-gradient(135deg,var(--gold),var(--rose),var(--mint),var(--gold));
+  background-size:300% 300%;
+  animation:borderFlow 6s linear infinite;
+  clip-path:polygon(
+    40px 0, calc(100% - 40px) 0, 100% 40px,
+    100% calc(100% - 40px), calc(100% - 40px) 100%,
+    40px 100%, 0 calc(100% - 40px), 0 40px
+  );
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0.7;
+  pointer-events:none;
+}
+
+.about-title{
+  font-family:'Lalezar',cursive;
+  font-size:clamp(2rem,4vw,3rem);
+  color:var(--honey);
+  text-align:center;
+  margin-bottom:40px;
+  letter-spacing:5px;
+  text-shadow:0 0 40px rgba(255,181,71,0.6);
+  position:relative;
+}
+
+.about-title::after{
+  content:'';
+  display:block;
+  width:80px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:20px auto 0;
+}
+
+.about-text{
+  font-size:1.05rem;
+  line-height:2.1;
+  color:var(--cream);
+  text-align:justify;
+  margin-bottom:20px;
+  opacity:0.95;
+}
+
+.about-text strong{
+  color:var(--honey);
+  font-weight:bold;
+}
+
+.about-signature{
+  text-align:center;
+  margin-top:40px;
+  font-family:'Amiri',serif;
+  font-size:1.2rem;
+  color:var(--rose);
+  letter-spacing:3px;
+  animation:signatureGlow 3s ease-in-out infinite;
+}
+
+@keyframes signatureGlow{
+  0%,100%{text-shadow:0 0 15px rgba(201,79,124,0.5)}
+  50%{text-shadow:0 0 30px rgba(201,79,124,1), 0 0 50px rgba(255,181,71,0.5)}
+}
+
+/* ============ مودال سبد خرید ============ */
+.cart-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(10,6,18,0.85);
+  backdrop-filter:blur(15px);
+  z-index:5000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  opacity:0;
+  visibility:hidden;
+  transition:all 0.5s;
+}
+
+.cart-modal.show{
+  opacity:1;
+  visibility:visible;
+}
+
+.cart-panel{
+  width:100%;
+  max-width:560px;
+  background:linear-gradient(165deg, #1a0d28, #2a1338);
+  border:2px solid var(--gold);
+  border-radius:4px;
+  padding:40px 30px 30px;
+  position:relative;
+  transform:scale(0.8) rotateX(20deg);
+  transition:transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:0 40px 100px rgba(0,0,0,0.9), 0 0 80px rgba(212,175,55,0.4);
+  clip-path:polygon(
+    30px 0, calc(100% - 30px) 0, 100% 30px,
+    100% calc(100% - 30px), calc(100% - 30px) 100%,
+    30px 100%, 0 calc(100% - 30px), 0 30px
+  );
+}
+
+.cart-modal.show .cart-panel{
+  transform:scale(1) rotateX(0);
+}
+
+.cart-close{
+  position:absolute;
+  top:15px;
+  left:15px;
+  width:44px;
+  height:44px;
+  background:linear-gradient(135deg,rgba(139,31,92,0.5),rgba(21,10,32,0.8));
+  border:1.5px solid var(--gold);
+  color:var(--honey);
+  border-radius:50%;
+  font-size:1.3rem;
+  cursor:pointer;
+  transition:all 0.4s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cart-close:hover{
+  background:linear-gradient(135deg,var(--rose),var(--magenta));
+  transform:rotate(180deg);
+  box-shadow:0 0 30px rgba(201,79,124,0.8);
+}
+
+.cart-title{
+  font-family:'Lalezar',cursive;
+  font-size:2.2rem;
+  color:var(--honey);
+  text-align:center;
+  margin-bottom:25px;
+  letter-spacing:4px;
+  text-shadow:0 0 30px rgba(255,181,71,0.6);
+}
+
+.cart-list{
+  list-style:none;
+  max-height:320px;
+  overflow-y:auto;
+  margin-bottom:20px;
+  padding-left:8px;
+}
+
+.cart-list::-webkit-scrollbar{width:6px}
+.cart-list::-webkit-scrollbar-track{background:rgba(21,10,32,0.5);border-radius:10px}
+.cart-list::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold),var(--rose));border-radius:10px}
+
+.cart-list li{
+  padding:14px 18px;
+  background:linear-gradient(135deg,rgba(42,19,56,0.6),rgba(21,10,32,0.8));
+  border-right:3px solid var(--mint);
+  border-radius:8px;
+  margin-bottom:10px;
+  color:var(--cream);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation:cartItemIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes cartItemIn{
+  from{opacity:0;transform:translateX(-30px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+.cart-empty{
+  text-align:center;
+  padding:40px 20px;
+  color:rgba(254,243,226,0.4);
+  font-size:1rem;
+  letter-spacing:2px;
+}
+
+.cart-empty-icon{
+  display:block;
+  font-size:3rem;
+  margin-bottom:15px;
+  opacity:0.4;
+  animation:emojiIdle 3s ease-in-out infinite;
+}
+
+.checkout-btn{
+  width:100%;
+  padding:18px;
+  background:linear-gradient(135deg,var(--magenta),var(--plum));
+  border:2px solid var(--gold);
+  color:var(--honey);
+  font-family:'Lalezar',cursive;
+  font-size:1.4rem;
+  letter-spacing:4px;
+  cursor:pointer;
+  border-radius:4px;
+  transition:all 0.5s;
+  position:relative;
+  overflow:hidden;
+}
+
+.checkout-btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--gold),var(--honey));
+  transform:translateY(100%);
+  transition:transform 0.5s;
+}
+
+.checkout-btn:hover::before{
+  transform:translateY(0);
+}
+
+.checkout-btn:hover{
+  color:var(--night);
+  letter-spacing:6px;
+}
+
+.checkout-btn span{
+  position:relative;
+  z-index:2;
+}
+
+/* ============ فوتر ============ */
+footer{
+  position:relative;
+  z-index:5;
+  text-align:center;
+  padding:50px 20px 40px;
+  margin-top:60px;
+  border-top:1px solid rgba(212,175,55,0.3);
+}
+
+.footer-text{
+  font-family:'Amiri',serif;
+  color:var(--honey);
+  font-size:1rem;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+.footer-heart{
+  color:var(--rose);
+  animation:heartBeat 1.5s ease-in-out infinite;
+  display:inline-block;
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1)}
+  20%{transform:scale(1.3)}
+  40%{transform:scale(1)}
+  60%{transform:scale(1.2)}
+}
+
+.footer-stars{
+  font-size:0.85rem;
+  color:var(--mint);
+  letter-spacing:4px;
+  opacity:0.7;
+}
+
+/* ============ ریسپانسیو ============ */
+@media (max-width:768px){
+  .logo-wrap{padding:15px 30px}
+  .site-title{letter-spacing:4px}
+  .nav-btn{padding:15px 28px;font-size:1.1rem;letter-spacing:2px}
+  .cart-bar{padding:10px 16px;font-size:0.9rem;top:12px;left:12px}
+  .products-mosaic,.teachers-mosaic{gap:50px 20px;padding:0 10px 60px}
+  .about-cosmic{padding:40px 25px}
+  .contact-grid{grid-template-columns:1fr}
+  .cart-panel{padding:30px 20px 20px}
+  .section-title{gap:15px;margin-bottom:40px}
+}
+
+/* اسکرول‌بار کل سایت */
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--night)}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--gold),var(--rose),var(--magenta));
+  border-radius:10px;
+  border:2px solid var(--night);
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,var(--honey),var(--rose),var(--magenta));
+}
+</style>
+</head>
+<body>
+
+<!-- ============ پس‌زمینه زنده ============ -->
+<div class="bg-layer">
+  <div class="bg-gradient"></div>
+  <div class="boteh-grid"></div>
+  <div class="neon-orb orb-1"></div>
+  <div class="neon-orb orb-2"></div>
+  <div class="neon-orb orb-3"></div>
+  <div class="particles" id="particles"></div>
+</div>
+
+<!-- ============ سبد خرید ============ -->
+<div class="cart-bar" id="cartBar">
+  <span class="cart-icon">🛍️</span>
+  <span>سبد خرید</span>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<!-- ============ هدر ============ -->
+<header>
+  <div class="logo-wrap">
+    <div class="logo-emblem"></div>
+    <h1 class="site-title">بچه‌های آسمان</h1>
+  </div>
+  <div class="site-subtitle">دست‌ساخته‌های هنرمندان اتیسم</div>
+</header>
+
+<!-- ============ ناوبری ============ -->
+<nav class="main-nav">
+  <button class="nav-btn active" data-target="products" data-glow>
+    <span>✦ محصولات فروش ✦</span>
+  </button>
+  <button class="nav-btn" data-target="teachers" data-glow>
+    <span>✦ معلمان و مسئولین ✦</span>
+  </button>
+  <button class="nav-btn" data-target="about" data-glow>
+    <span>✦ درباره موسسه ✦</span>
+  </button>
+</nav>
+
+<!-- ============ بخش محصولات ============ -->
+<section class="section active" id="products">
+  <h2 class="section-title">گنجینه دست‌ساخته‌ها</h2>
+  <div class="products-mosaic">
+
+    <!-- محصول ۱ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🍽️</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">سفالگری</span>
+            <h3 class="tile-title">بشقاب نقاشی‌شده</h3>
+            <div class="tile-price">۲۵۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">👦</div>
+                <div class="creator-info">
+                  <div class="creator-name">فرهاد تقوی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                مناسب برای سرو دسر و تزئین میز. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'بشقاب نقاشی‌شده')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- محصول ۲ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🥣</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">سفالگری</span>
+            <h3 class="tile-title">کاسه سفالی</h3>
+            <div class="tile-price">۱۸۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">👧</div>
+                <div class="creator-info">
+                  <div class="creator-name">سارا محمدی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                مناسب برای میوه و آجیل. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'کاسه سفالی')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- محصول ۳ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🖼️</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">نقاشی</span>
+            <h3 class="tile-title">تابلو نقاشی</h3>
+            <div class="tile-price">۴۵۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">🧑</div>
+                <div class="creator-info">
+                  <div class="creator-name">علی رضایی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                تزئین دیوار منزل یا محل کار. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'تابلو نقاشی')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- محصول ۴ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🕯️</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">شمع‌سازی</span>
+            <h3 class="tile-title">شمع معطر</h3>
+            <div class="tile-price">۱۲۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">👩</div>
+                <div class="creator-info">
+                  <div class="creator-name">مریم کریمی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                ایجاد آرامش و عطر خوش در فضا. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'شمع معطر')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- محصول ۵ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🧵</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">گلیم‌بافی</span>
+            <h3 class="tile-title">رو میزی گلیم</h3>
+            <div class="tile-price">۳۲۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">👦</div>
+                <div class="creator-info">
+                  <div class="creator-name">امیر حسینی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                تزئین میز غذاخوری یا کنسول. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'رو میزی گلیم')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- محصول ۶ -->
+    <div class="product-tile">
+      <div class="tile-aura"></div>
+      <div class="tile-frame">
+        <div class="tile-inner">
+          <div class="tile-image">
+            <div class="tile-emoji">🏺</div>
+          </div>
+          <div class="tile-content">
+            <span class="tile-category">سفالگری</span>
+            <h3 class="tile-title">گلدان تزئینی</h3>
+            <div class="tile-price">۲۸۰,۰۰۰ تومان</div>
+            <button class="reveal-btn" onclick="togglePanel(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش جزئیات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="details-panel">
+            <div class="details-inner">
+              <div class="creator-block">
+                <div class="creator-avatar">👧</div>
+                <div class="creator-info">
+                  <div class="creator-name">نگار احمدی</div>
+                  <div class="creator-tag">✦ هنرمند اتیسم</div>
+                </div>
+              </div>
+              <div class="usage-block">
+                مناسب برای گل‌های آپارتمانی و تزئین فضا. پول این محصول برای توسعه موسسه استفاده می‌شود.
+              </div>
+              <button class="add-btn" onclick="addItem(this,'گلدان تزئینی')">
+                <span>✦</span><span>افزودن به سبد خرید</span><span>✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ بخش معلمان ============ -->
+<section class="section" id="teachers">
+  <h2 class="section-title">اساتید و همراهان</h2>
+  <div class="teachers-mosaic">
+
+    <div class="teacher-tile">
+      <div class="teacher-frame">
+        <div class="teacher-inner">
+          <div class="teacher-head">
+            <div class="teacher-avatar-big">👨‍🏫</div>
+            <div class="teacher-name-big">آقای یاسر نجاتی</div>
+            <div class="teacher-role-big">مدرس سفالگری</div>
+            <button class="reveal-btn" style="margin-top:20px" onclick="toggleTeacher(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش اطلاعات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="teacher-details">
+            <div class="teacher-details-inner">
+              <div class="teacher-bio-big">
+                ۱۲ سال تدریس هنر به کودکان اتیسم. مسئولیت: سرپرستی کارگاه سفال و مجسمه‌سازی.
+              </div>
+              <div class="contact-grid">
+                <a class="contact-chip"><span>📱</span><span>ایتا</span></a>
+                <a class="contact-chip"><span>📲</span><span>روبیکا</span></a>
+                <a class="contact-chip"><span>📷</span><span>اینستاگرام</span></a>
+                <a class="contact-chip"><span>📞</span><span>۰۹۱۲۳۴۵۶۷۸۹</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="teacher-tile">
+      <div class="teacher-frame">
+        <div class="teacher-inner">
+          <div class="teacher-head">
+            <div class="teacher-avatar-big">👩‍🏫</div>
+            <div class="teacher-name-big">خانم زهرا امیری</div>
+            <div class="teacher-role-big">مدرس نقاشی</div>
+            <button class="reveal-btn" style="margin-top:20px" onclick="toggleTeacher(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش اطلاعات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="teacher-details">
+            <div class="teacher-details-inner">
+              <div class="teacher-bio-big">
+                ۸ سال تدریس نقاشی و رنگ‌آمیزی. مسئولیت: هدایت کارگاه نقاشی و طراحی تابلوها.
+              </div>
+              <div class="contact-grid">
+                <a class="contact-chip"><span>📱</span><span>ایتا</span></a>
+                <a class="contact-chip"><span>📲</span><span>روبیکا</span></a>
+                <a class="contact-chip"><span>📷</span><span>اینستاگرام</span></a>
+                <a class="contact-chip"><span>📞</span><span>۰۹۱۹۸۷۶۵۴۳۲</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="teacher-tile">
+      <div class="teacher-frame">
+        <div class="teacher-inner">
+          <div class="teacher-head">
+            <div class="teacher-avatar-big">👨‍🎨</div>
+            <div class="teacher-name-big">آقای مهدی صادقی</div>
+            <div class="teacher-role-big">مدرس صنایع دستی</div>
+            <button class="reveal-btn" style="margin-top:20px" onclick="toggleTeacher(this)">
+              <span class="diamond">◆</span>
+              <span class="reveal-text">نمایش اطلاعات</span>
+              <span class="diamond">◆</span>
+            </button>
+          </div>
+          <div class="teacher-details">
+            <div class="teacher-details-inner">
+              <div class="teacher-bio-big">
+                ۱۰ سال آموزش گلیم‌بافی و هنرهای دستی. مسئولیت: آموزش ساخت رومیزی و زیرلیوانی.
+              </div>
+              <div class="contact-grid">
+                <a class="contact-chip"><span>📱</span><span>ایتا</span></a>
+                <a class="contact-chip"><span>📲</span><span>روبیکا</span></a>
+                <a class="contact-chip"><span>📷</span><span>اینستاگرام</span></a>
+                <a class="contact-chip"><span>📞</span><span>۰۹۳۵۱۲۳۴۵۶۷</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ بخش درباره ============ -->
+<section class="section" id="about">
+  <h2 class="section-title">داستان ما</h2>
+  <div class="about-cosmic">
+    <h3 class="about-title">موسسه بچه‌های آسمان</h3>
+    <p class="about-text">
+      موسسه <strong>بچه‌های آسمان</strong> از سال ۱۳۹۰ فعالیت خود را با هدف توانمندسازی کودکان و نوجوانان اتیسم آغاز کرده است. ما در این موسسه با آموزش هنرهای دستی مانند سفالگری، نقاشی، گلیم‌بافی و شمع‌سازی به این عزیزان کمک می‌کنیم تا استعدادهای خود را شکوفا کنند و از طریق فروش محصولاتشان، به استقلال مالی برسند.
+    </p>
+    <p class="about-text">
+      تمام عواید حاصل از فروش محصولات این سایت، صرف <strong>توسعه کارگاه‌های آموزشی</strong>، خرید مواد اولیه و حمایت از خانواده‌های این هنرمندان می‌شود. شما با خرید هر محصول، در واقع به رشد و بالندگی بچه‌های آسمان کمک می‌کنید.
+    </p>
+    <p class="about-signature">
+      ✦ با ما همراه باشید تا آسمان زندگی این بچه‌ها پرستاره‌تر شود ✦
+    </p>
+  </div>
+</section>
+
+<!-- ============ مودال سبد خرید ============ -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-panel">
+    <button class="cart-close" id="cartClose">✕</button>
+    <h3 class="cart-title">سبد خرید شما</h3>
+    <ul class="cart-list" id="cartList">
+      <li class="cart-empty">
+        <span class="cart-empty-icon">🛍️</span>
+        سبد خرید شما خالی است
+      </li>
+    </ul>
+    <button class="checkout-btn" id="checkoutBtn">
+      <span>✦ ادامه فرآیند خرید ✦</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ فوتر ============ -->
+<footer>
+  <div class="footer-text">
+    © ۱۴۰۴ موسسه بچه‌های آسمان
+  </div>
+  <div class="footer-text" style="font-size:0.85rem;opacity:0.7">
+    طراحی با <span class="footer-heart">❤</span> برای هنرمندان اتیسم
+  </div>
+  <div class="footer-stars">✦ ✦ ✦</div>
+</footer>
+
+<script>
+/* ============ ذرات شناور ============ */
+(function makeParticles(){
+  const container = document.getElementById('particles');
+  const count = 40;
+  for(let i=0;i<count;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100 + '%';
+    p.style.bottom = '-10px';
+    p.style.animationDuration = (12 + Math.random()*15) + 's';
+    p.style.animationDelay = (Math.random()*15) + 's';
+    const size = 1 + Math.random()*3;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    if(Math.random() > 0.7){
+      p.style.background = '#5eead4';
+      p.style.boxShadow = '0 0 10px #5eead4, 0 0 20px #5eead4';
+    } else if(Math.random() > 0.5){
+      p.style.background = '#c94f7c';
+      p.style.boxShadow = '0 0 10px #c94f7c, 0 0 20px #c94f7c';
+    }
+    container.appendChild(p);
+  }
+})();
+
+/* ============ افکت نور موس روی دکمه‌های ناوبری ============ */
+document.querySelectorAll('[data-glow]').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    btn.style.setProperty('--x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+    btn.style.setProperty('--y', ((e.clientY - rect.top) / rect.height * 100) + '%');
+  });
+});
+
+/* ============ ناوبری بین بخش‌ها ============ */
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    const sec = document.getElementById(target);
+    sec.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+/* ============ باز کردن پنل جزئیات محصول ============ */
+function togglePanel(btn){
+  const tile = btn.closest('.product-tile');
+  const panel = tile.querySelector('.details-panel');
+  const text = btn.querySelector('.reveal-text');
+  const isOpen = panel.classList.contains('open');
+
+  if(isOpen){
+    panel.classList.remove('open');
+    text.textContent = 'نمایش جزئیات';
+    btn.style.color = '';
+  } else {
+    // بستن سایر پنل‌های باز
+    document.querySelectorAll('.details-panel.open').forEach(p => {
+      p.classList.remove('open');
+      const t = p.closest('.product-tile').querySelector('.reveal-text');
+      if(t) t.textContent = 'نمایش جزئیات';
+    });
+    panel.classList.add('open');
+    text.textContent = 'بستن جزئیات';
+    btn.style.color = 'var(--night)';
+  }
+}
+
+/* ============ باز کردن پنل معلم ============ */
+function toggleTeacher(btn){
+  const tile = btn.closest('.teacher-tile');
+  const details = tile.querySelector('.teacher-details');
+  const text = btn.querySelector('.reveal-text');
+  const isOpen = details.classList.contains('open');
+
+  if(isOpen){
+    details.classList.remove('open');
+    text.textContent = 'نمایش اطلاعات';
+    btn.style.color = '';
+  } else {
+    document.querySelectorAll('.teacher-details.open').forEach(d => {
+      d.classList.remove('open');
+      const t = d.closest('.teacher-tile').querySelector('.reveal-text');
+      if(t) t.textContent = 'نمایش اطلاعات';
+    });
+    details.classList.add('open');
+    text.textContent = 'بستن اطلاعات';
+    btn.style.color = 'var(--night)';
+  }
+}
+
+/* ============ سبد خرید ============ */
+const cart = [];
+
+function addItem(btn, name){
+  cart.push(name);
+  updateCartBadge();
+  renderCart();
+
+  const originalHTML = btn.innerHTML;
+  btn.classList.add('added');
+  btn.innerHTML = '<span>✓</span><span>به سبد اضافه شد</span><span>✓</span>';
+
+  // افکت ذرات پرواز به سمت سبد خرید
+  flyToCart(btn);
+
+  setTimeout(() => {
+    btn.classList.remove('added');
+    btn.innerHTML = originalHTML;
+  }, 1800);
+}
+
+function updateCartBadge(){
+  const badge = document.getElementById('cartBadge');
+  badge.textContent = cart.length;
+  badge.style.animation = 'none';
+  setTimeout(() => {
+    badge.style.animation = 'avatarPulse 0.5s ease';
+  }, 10);
+}
+
+function renderCart(){
+  const list = document.getElementById('cartList');
+  if(cart.length === 0){
+    list.innerHTML = `<li class="cart-empty">
+      <span class="cart-empty-icon">🛍️</span>
+      سبد خرید شما خالی است
+    </li>`;
+    return;
+  }
+  list.innerHTML = cart.map((item, i) => `
+    <li style="animation-delay:${i*0.08}s">
+      <span>✦ ${item}</span>
+      <span style="color:var(--mint)">✓</span>
+    </li>
+  `).join('');
+}
+
+/* افکت پرواز ذرات از دکمه به سبد */
+function flyToCart(sourceEl){
+  const sourceRect = sourceEl.getBoundingClientRect();
+  const cartRect = document.getElementById('cartBar').getBoundingClientRect();
+
+  for(let i=0;i<8;i++){
+    const particle = document.createElement('div');
+    particle.style.position = 'fixed';
+    particle.style.left = (sourceRect.left + sourceRect.width/2) + 'px';
+    particle.style.top = (sourceRect.top + sourceRect.height/2) + 'px';
+    particle.style.width = '12px';
+    particle.style.height = '12px';
+    particle.style.borderRadius = '50%';
+    particle.style.background = i%2 ? 'var(--honey)' : 'var(--rose)';
+    particle.style.boxShadow = i%2 ? '0 0 20px var(--honey)' : '0 0 20px var(--rose)';
+    particle.style.zIndex = '9999';
+    particle.style.pointerEvents = 'none';
+    particle.style.transition = 'all 0.9s cubic-bezier(0.34,1.56,0.64,1)';
+    document.body.appendChild(particle);
+
+    // تاخیر کوچک برای شروع انیمیشن
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        particle.style.left = (cartRect.left + cartRect.width/2 - 6) + 'px';
+        particle.style.top = (cartRect.top + cartRect.height/2 - 6) + 'px';
+        particle.style.transform = 'scale(0.3)';
+        particle.style.opacity = '0.3';
+      }, 20);
+    });
+
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+
+/* ============ مودال سبد ============ */
+const cartModal = document.getElementById('cartModal');
+document.getElementById('cartBar').addEventListener('click', () => {
+  cartModal.classList.add('show');
+  renderCart();
+});
+document.getElementById('cartClose').addEventListener('click', () => {
+  cartModal.classList.remove('show');
+});
+cartModal.addEventListener('click', e => {
+  if(e.target === cartModal) cartModal.classList.remove('show');
+});
+
+document.getElementById('checkoutBtn').addEventListener('click', () => {
+  if(cart.length === 0){
+    alert('سبد خرید شما خالی است. لطفاً ابتدا محصولی اضافه کنید.');
+  } else {
+    alert('فرآیند خرید به زودی فعال می‌شود. از حمایت شما سپاسگزاریم ✦');
+  }
+});
+
+/* ============ افکت پارالاکس ملایم روی موس ============ */
+let mouseX = 0, mouseY = 0;
+document.addEventListener('mousemove', e => {
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  document.querySelectorAll('.neon-orb').forEach((orb, i) => {
+    const factor = (i + 1) * 0.5;
+    orb.style.transform = `translate(${mouseX * factor}px, ${mouseY * factor}px)`;
+  });
+});
+</script>
+</body>
+</html>
